@@ -5,6 +5,9 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 
+// For "Resource::withoutWrapping();" in boot
+// use Illuminate\Http\Resources\Json\Resource; 
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -26,5 +29,7 @@ class AppServiceProvider extends ServiceProvider
     {
         // To prevent error
         Schema::defaultStringLength(191);
+        // Removes "data object" wrap when viewing in api
+        // Resource::withoutWrapping();
     }
 }
