@@ -25,4 +25,17 @@ class Article extends JsonResource
 
         ];
     }
+
+    public function with($request)
+    {
+
+        // Custom array to return specific parts
+        return [
+
+            'version' => '1.0.0',
+            'author_url' => 'http://dstearle.com',
+
+        ];
+    }
+
 }
