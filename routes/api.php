@@ -27,7 +27,7 @@ Route::get('article/{id}', 'ArticleController@show');
 Route::post('article', 'ArticleController@store');
 
 // Update article
-Route::put('articles', 'ArticleController@store');
+Route::put('article', 'ArticleController@store');
 
 // Delete article
-Route::delete('articles', 'ArticleController@destroy');
+Route::delete('article/{id}', 'ArticleController@destroy');

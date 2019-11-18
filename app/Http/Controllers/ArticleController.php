@@ -39,6 +39,7 @@ class ArticleController extends Controller
         $article->body = $request->input('body');
 
 
+        // If the article is saved return the resource
         if($article->save()){
 
             return new ArticleResource($article);
@@ -69,6 +70,15 @@ class ArticleController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // Get a single article
+        $article = Article::findOrFail($id);
+
+        // Return the single article as a resource
+        if($article->delete()){
+
+            return new ArticleResource($article);
+
+        }
+        
     }
 }
